@@ -35,7 +35,7 @@
           </el-col>
         </el-row>
       </SwiperSlide>
-      <div class="swiper-pagination" />
+      <!-- <div class="swiper-pagination" /> -->
     </Swiper>
   </div>
 </template>

@@ -21,7 +21,7 @@
               <span> {{ currentTime.hour }}:{{ currentTime.minute }}:{{ currentTime.second }}</span>
             </div>
           </div>
-          <Weather />
+          <!-- <Weather /> -->
         </div>
       </el-col>
     </el-row>
@@ -33,7 +33,7 @@ import { getCurrentTime } from "@/utils/getTime";
 import { mainStore } from "@/store";
 import Music from "@/components/Music.vue";
 import Hitokoto from "@/components/Hitokoto.vue";
-import Weather from "@/components/Weather.vue";
+// import Weather from "@/components/Weather.vue";
 
 const store = mainStore();
 
@@ -66,6 +66,7 @@ onBeforeUnmount(() => {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
   &.mobile {
     .el-row {
       .el-col {
@@ -78,10 +79,12 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .el-row {
     height: 100%;
     width: 100%;
     margin: 0 !important;
+
     .el-col {
       &:nth-of-type(1) {
         padding-left: 0 !important;
@@ -89,6 +92,7 @@ onBeforeUnmount(() => {
       &:nth-of-type(2) {
         padding-right: 0 !important;
       }
+      
       @media (max-width: 910px) {
         &:nth-of-type(1) {
           display: none;
@@ -101,11 +105,13 @@ onBeforeUnmount(() => {
         }
       }
     }
+
     .left,
     .right {
       width: 100%;
       height: 100%;
     }
+
     .right {
       padding: 20px;
       display: flex;
@@ -113,30 +119,46 @@ onBeforeUnmount(() => {
       align-items: center;
       justify-content: space-between;
       animation: fade 0.5s;
+
       .time {
         font-size: 1.1rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* 确保时间和日期之间的空隙 */
+        height: 100%;
+        
         .date {
           text-overflow: ellipsis;
           overflow-x: hidden;
           white-space: nowrap;
+          margin-top: 12px;
         }
+
         .text {
           margin-top: 10px;
           font-size: 3.25rem;
           letter-spacing: 2px;
           font-family: "UnidreamLED";
         }
+
+        .sm-hidden {
+          align-self: flex-end; /* 将 sm-hidden 元素靠下对齐 */
+        }
+
         @media (min-width: 1201px) and (max-width: 1280px) {
           font-size: 1rem;
         }
+
         @media (min-width: 911px) and (max-width: 992px) {
           font-size: 1rem;
+
           .text {
             font-size: 2.75rem;
           }
         }
       }
+
       .weather {
         text-align: center;
         width: 100%;

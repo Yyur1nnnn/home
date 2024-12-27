@@ -36,6 +36,8 @@ const siteUrl = computed(() => {
   // flex: 1 0 0%;
   width: 50%;
   margin-left: 0.75rem;
+  margin-top: 40px;
+
   .logo {
     width: 100%;
     font-family: "Pacifico-Regular";
